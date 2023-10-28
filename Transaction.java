@@ -52,4 +52,14 @@ public class Transaction {
 		}
 		transactionFee = totalPrice * 0.01;
 	}
+
+	public void setId(int id) 
+	{
+		this.id = id;
+	}
+	
+	public int getId() 
+	{
+		return this.id;
+	}
 }

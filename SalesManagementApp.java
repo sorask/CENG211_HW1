@@ -58,6 +58,7 @@ public class SalesManagementApp {
 		}
 		
 		Transaction tmpTransaction = new Transaction(0);
+		System.out.println(tmpTransaction.getId());
 		System.out.println(tmpTransaction.arrayOfProducts[0].getName());
 		System.out.println(tmpTransaction.arrayOfQuantities[0]);
 		System.out.println(tmpTransaction.arrayOfProducts[1].getName());
