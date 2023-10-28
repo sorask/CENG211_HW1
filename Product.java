@@ -1,6 +1,10 @@
 package ceng211.hw1;
 
 public class Product {
+	public final static int NUMBER_OF_PRODUCTS = 90;
+	
+	public static Product[] Products = new Product[Product.NUMBER_OF_PRODUCTS];
+	
 	private int id;
 	private String name;
 	private double price;
@@ -9,7 +13,7 @@ public class Product {
 	{
 		id = -1;
 		name = "Acmes";
-		price = .0f;
+		price = -.0f;
 	}
 
 	public Product(int id, String name, double price)
@@ -17,7 +21,6 @@ public class Product {
 		this.id = id;
 		this.name = name;
 		this.price = price;
-		
 	}
 	
 	public void setId(int id) 
@@ -49,4 +52,8 @@ public class Product {
 	{
 		return this.price;
 	}
+	
+    public String toString() {
+        return this.id + " " + this.name + " " + this.price;
+    }
 }
