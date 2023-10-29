@@ -1,6 +1,9 @@
 package ceng211.hw1;
 
 public class ShopAssistant {
+	
+	final static int NUMBER_OF_SHOP_ASSISTANS = 100;
+	
 	private int id;
 	private String name;
 	private String surname;
