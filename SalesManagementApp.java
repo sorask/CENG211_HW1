@@ -24,7 +24,7 @@ public class SalesManagementApp {
 //			System.out.println(FileIO.ShopAssistants[i].toString());
 //		}		
 		
-//		Transaction tmpTransaction = new Transaction(0);
+//		Transaction tmpTransaction1 = new Transaction(0);
 //		System.out.println(tmpTransaction.getId());
 //		System.out.println(tmpTransaction.arrayOfProducts[0].getName() + " " + tmpTransaction.arrayOfProducts[0].getId());
 //		System.out.println(tmpTransaction.arrayOfQuantities[0]);
@@ -34,18 +34,30 @@ public class SalesManagementApp {
 //		System.out.println(tmpTransaction.arrayOfQuantities[2]);
 //		System.out.println(tmpTransaction.totalPrice);
 //		System.out.println(tmpTransaction.transactionFee);
+//		System.out.println(tmpTransaction1.toString());
 		
-		int i = 1;
-		int j = 1;
+//		int i = 0;
+//		int j = 0;
 		TransactionManagement tmpTransactionManagement = new TransactionManagement();
-		System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].getId());
-		System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].arrayOfProducts[0].getName() + " " + tmpTransactionManagement.arrayOfTransactions[0][0].arrayOfProducts[0].getId());
-		System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].arrayOfQuantities[0]);
-		System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].arrayOfProducts[1].getName() + " " + tmpTransactionManagement.arrayOfTransactions[0][0].arrayOfProducts[1].getId());
-		System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].arrayOfQuantities[1]);
-		System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].arrayOfProducts[2].getName() + " " + tmpTransactionManagement.arrayOfTransactions[0][0].arrayOfProducts[2].getId());
-		System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].arrayOfQuantities[2]);
-		System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].totalPrice);
-		System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].transactionFee);
+//		Transaction tmpTransaction2 = tmpTransactionManagement.arrayOfTransactions[0][0];
+//		Transaction tmpTransaction3 = tmpTransactionManagement.arrayOfTransactions[1][0];
+//		System.out.println(tmpTransaction.getId());
+//		System.out.println(tmpTransaction.arrayOfProducts[0].getName() + " " + tmpTransaction.arrayOfProducts[0].getId());
+//		System.out.println(tmpTransaction.arrayOfQuantities[0]);
+//		System.out.println(tmpTransaction.arrayOfProducts[1].getName() + " " + tmpTransaction.arrayOfProducts[1].getId());
+//		System.out.println(tmpTransaction.arrayOfQuantities[1]);
+//		System.out.println(tmpTransaction.arrayOfProducts[2].getName() + " " + tmpTransaction.arrayOfProducts[2].getId());
+//		System.out.println(tmpTransaction.arrayOfQuantities[2]);
+//		System.out.println(tmpTransaction.totalPrice);
+//		System.out.println(tmpTransaction.transactionFee);
+//		System.out.println(tmpTransaction2.toString());
+//		System.out.println(tmpTransaction3.toString());
+//		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; i++) {
+//			for (int j = 0; j < SalesManagementApp.TRANSACTION_PER_SHOP_ASSISTANTS; j++) {
+		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
+			for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
+				System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].toString());
+			}
+		}		
 	}
 }

@@ -1,6 +1,7 @@
 package ceng211.hw1;
 
 import java.util.Random;
+import java.util.Arrays;
 
 public class Transaction {
 	
@@ -66,4 +67,8 @@ public class Transaction {
 	{
 		return this.id;
 	}
+	
+    public String toString() {
+        return this.id + " " + Arrays.toString(this.arrayOfProducts).toString() + " " + Arrays.toString(this.arrayOfQuantities) + " " + this.totalPrice+ " " + this.transactionFee;
+    }
 }
