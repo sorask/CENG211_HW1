@@ -14,7 +14,7 @@ public class SalaryManagement {
 		else
 			salary = 1500.;
 		
-		return salary * 4;
+		return salary;
 	}
 	
 	static double calculateCommision(int ShopAssistantId)

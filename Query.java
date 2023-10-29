@@ -58,4 +58,18 @@ public class Query {
 		}
 		return LowestTranscaction;
 	}
+	
+	public static ShopAssistant theHighestSalaryShopAssistant()
+	{
+		ShopAssistant maxShopAssistant = new ShopAssistant();
+		maxShopAssistant = FileIO.ShopAssistants[0];
+		double max = maxShopAssistant.getSalary();
+		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
+			if (max < FileIO.ShopAssistants[i].getSalary()) {
+				max = FileIO.ShopAssistants[i].getSalary();
+				maxShopAssistant = FileIO.ShopAssistants[i];
+			}	
+		}	
+		return maxShopAssistant;
+	}
 }

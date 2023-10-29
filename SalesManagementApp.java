@@ -73,7 +73,8 @@ public class SalesManagementApp {
 		
 		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
 //			System.out.println(FileIO.ShopAssistants[i].toString());
-			FileIO.ShopAssistants[i].setSalary(SalaryManagement.calculateSalary(FileIO.ShopAssistants[i].getSeniority()));
+			FileIO.ShopAssistants[i].setWeeklyBasedSalary(SalaryManagement.calculateSalary(FileIO.ShopAssistants[i].getSeniority()));
+			FileIO.ShopAssistants[i].setSalary(4*SalaryManagement.calculateSalary(FileIO.ShopAssistants[i].getSeniority()));
 			FileIO.ShopAssistants[i].setSales(SalaryManagement.calculateTotalRevenuePerShopAssistant(i));
 			FileIO.ShopAssistants[i].setCommision(SalaryManagement.calculateCommision(i));
 			System.out.println(FileIO.ShopAssistants[i].toString());
@@ -82,5 +83,6 @@ public class SalesManagementApp {
 		System.out.println(Query.theHighestTotalPriceTransaction().toString());
 		System.out.println(Query.theLowestTotalPriceTransactionWithTheMostExpensiveProduct().toString());
 		System.out.println(Query.theLowestTransactionFee().toString());
+		System.out.println(Query.theHighestSalaryShopAssistant().toString());
 	}
 }

@@ -11,6 +11,7 @@ public class ShopAssistant {
 	private String surname;
 	private String phoneNumber;
 	private int seniority;
+	private double weeklyBasedSalary;
 	private double salary;
 	private double sales;
 	private double commision;
@@ -22,6 +23,7 @@ public class ShopAssistant {
 		surname = "noname";
 		phoneNumber = "999-9999";
 		seniority = 0;
+		weeklyBasedSalary = .0;
 		salary = .0;
 		sales = .0;
 		commision = .0;
@@ -36,6 +38,7 @@ public class ShopAssistant {
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
 		this.seniority = random.nextInt(6) + 1;
+		this.weeklyBasedSalary = .0;;
 		this.salary = .0;
 		this.sales = .0;
 		this.commision = .0;		
@@ -86,6 +89,16 @@ public class ShopAssistant {
 		return this.seniority;
 	}
 
+	public void setWeeklyBasedSalary(double weeklyBasedSalary)
+	{
+		this.weeklyBasedSalary = weeklyBasedSalary;
+	}
+	
+	public double getWeeklyBasedSalary()
+	{
+		return this.weeklyBasedSalary;
+	}
+	
 	public void setSalary(double salary)
 	{
 		this.salary = salary;
@@ -107,7 +120,7 @@ public class ShopAssistant {
 	}
 	
     public String toString() {
-        return this.id + " " + this.name + " " + this.surname + " " + this.phoneNumber+ " " + this.seniority+ " " + this.salary+ " " + this.sales+ " " + this.commision;
+        return this.id + " " + this.name + " " + this.surname + " " + this.phoneNumber+ " " + this.seniority+ " " + this.weeklyBasedSalary + " " + this.salary+ " " + this.sales+ " " + this.commision;
     }
 }
 
