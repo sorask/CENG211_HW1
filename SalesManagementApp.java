@@ -59,17 +59,21 @@ public class SalesManagementApp {
 //		System.out.println(tmpTransaction.transactionFee);
 //		System.out.println(tmpTransaction2.toString());
 //		System.out.println(tmpTransaction3.toString());
+		
 //		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
 //		for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {
-//		for (int i = 0; i < 2; ++i) {
-//			double tmpTotalPrice = 0;
-//			for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
-//				System.out.println(TransactionManagement.arrayOfTransactions[i][j].toString());
-//				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].totalPrice;
-//			}
+		double tmpTotalRevenue = 0;		
+		for (int i = 0; i < 2; ++i) {
+			double tmpTotalPrice = 0;
+			for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
+				System.out.println(TransactionManagement.arrayOfTransactions[i][j].toString());
+				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].totalPrice;
+			}
 //			System.out.println(i + " " +tmpTotalPrice);
-//			System.out.println(SalaryManagement.calculateTotalRevenuePerShopAssistan(i));
-//		}
+			System.out.println(i + " " + SalaryManagement.calculateTotalRevenuePerShopAssistant(i));
+			tmpTotalRevenue += tmpTotalPrice;
+		}
+		System.out.println(tmpTotalRevenue);
 		
 		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
 			System.out.println(FileIO.ShopAssistants[i].toString());
