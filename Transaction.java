@@ -18,12 +18,10 @@ public class Transaction {
 	{		
 		id = -1;
 		
-//		arrayOfProducts = {new Product(), new Product(), new Product()};
 		arrayOfProducts = new Product[SIZE_OF_PRODUCS_ARRAY];
 		for (int i = 0; i < SIZE_OF_PRODUCS_ARRAY; i++)
 			arrayOfProducts[i] = new Product();
 		
-//		arrayOfQuantities = {-1, -1, -1};
 		arrayOfQuantities = new int[SIZE_OF_PRODUCS_ARRAY];
 		for (int i = 0; i <SIZE_OF_PRODUCS_ARRAY; i++)
 			arrayOfQuantities[i] = -1;
@@ -45,9 +43,7 @@ public class Transaction {
 		
 		Random random = new Random();
 		
-		for (int i = 0; i <SIZE_OF_PRODUCS_ARRAY; i++) {
-//			Random randomProduct = new Random();
-//			Random randomQuantity = new Random();			
+		for (int i = 0; i <SIZE_OF_PRODUCS_ARRAY; i++) {		
 			int randomProductId = random.nextInt(Product.NUMBER_OF_PRODUCTS);
 			arrayOfProducts[i] = FileIO.Products[randomProductId];
 			int randomQuantityValue = random.nextInt(RANDOM_NUMBER_RANGE_OF_QUANTITY) + 1;

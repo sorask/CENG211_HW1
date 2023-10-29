@@ -118,6 +118,11 @@ public class ShopAssistant {
 	{
 		this.commision = commision;
 	}
+
+	public double getCommision()
+	{
+		return this.commision;
+	}
 	
     public String toString() {
         return this.id + " " + this.name + " " + this.surname + " " + this.phoneNumber+ " " + this.seniority+ " " + this.weeklyBasedSalary + " " + this.salary+ " " + this.sales+ " " + this.commision;

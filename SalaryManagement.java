@@ -34,11 +34,8 @@ public class SalaryManagement {
 	{
 		double TotalRevenueOfShopAssistant = 0;
 		for (int j = 0; j < SalesManagementApp.TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
-//			System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].toString());
 			TotalRevenueOfShopAssistant += TransactionManagement.arrayOfTransactions[ShopAssistantId][j].getTotalPrice();
 		}
-		
-//		System.out.println(ShopAssistantId + " " +TotalRevenueOfShopAssistan);
 		
 		return TotalRevenueOfShopAssistant;
 	}	

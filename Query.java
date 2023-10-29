@@ -8,7 +8,7 @@ public class Query {
 		double max = maxTranscaction.getTotalPrice();
 		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
 			for (int j = 0; j < SalesManagementApp.TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {	
-				if (max < TransactionManagement.arrayOfTransactions[i][j].getTotalPrice()) {
+				if (max <= TransactionManagement.arrayOfTransactions[i][j].getTotalPrice()) {
 					max = TransactionManagement.arrayOfTransactions[i][j].getTotalPrice();
 					maxTranscaction = TransactionManagement.arrayOfTransactions[i][j];
 				}	
@@ -24,7 +24,7 @@ public class Query {
 		double min = minTranscaction.getTotalPrice();
 		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
 			for (int j = 0; j < SalesManagementApp.TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {	
-				if (min > TransactionManagement.arrayOfTransactions[i][j].getTotalPrice()) {
+				if (min >= TransactionManagement.arrayOfTransactions[i][j].getTotalPrice()) {
 					min = TransactionManagement.arrayOfTransactions[i][j].getTotalPrice();
 					minTranscaction = TransactionManagement.arrayOfTransactions[i][j];
 				}	
@@ -34,9 +34,10 @@ public class Query {
 		Product[] products = new Product[Transaction.SIZE_OF_PRODUCS_ARRAY];
 		products = minTranscaction.getProducts();
 		Product maxProduct = new Product();
+		maxProduct = products[0];
 		double max = products[0].getPrice();
 		for (int i = 0; i < Transaction.SIZE_OF_PRODUCS_ARRAY; i++)
-			if (max < products[i].getPrice()) {
+			if (max <= products[i].getPrice()) {
 				max = products[i].getPrice();
 				maxProduct = products[i];
 			}	
@@ -50,7 +51,7 @@ public class Query {
 		double lowest = LowestTranscaction.getTransactionFee();
 		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
 			for (int j = 0; j < SalesManagementApp.TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {	
-				if (lowest > TransactionManagement.arrayOfTransactions[i][j].getTransactionFee()) {
+				if (lowest >= TransactionManagement.arrayOfTransactions[i][j].getTransactionFee()) {
 					lowest = TransactionManagement.arrayOfTransactions[i][j].getTransactionFee();
 					LowestTranscaction = TransactionManagement.arrayOfTransactions[i][j];
 				}	
@@ -65,11 +66,35 @@ public class Query {
 		maxShopAssistant = FileIO.ShopAssistants[0];
 		double max = maxShopAssistant.getSalary();
 		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
-			if (max < FileIO.ShopAssistants[i].getSalary()) {
+			if (max <= FileIO.ShopAssistants[i].getSalary()) {
 				max = FileIO.ShopAssistants[i].getSalary();
 				maxShopAssistant = FileIO.ShopAssistants[i];
 			}	
 		}	
 		return maxShopAssistant;
+	}
+	
+	public static double totalRevenue()
+	{
+		double tmpTotalRevenue = 0;
+		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
+			double tmpTotalPrice = .0;
+			double tmpTotalFee = .0;
+			for (int j = 0; j < SalesManagementApp.TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {			
+				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].getTotalPrice();
+				tmpTotalFee += TransactionManagement.arrayOfTransactions[i][j].getTransactionFee();
+			}
+			tmpTotalRevenue += tmpTotalPrice + tmpTotalFee;
+		}		
+		return tmpTotalRevenue;
+	}
+	
+	public static double totalProfit()
+	{
+		double shopAssistanSalaries = .0;
+		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
+			shopAssistanSalaries += FileIO.ShopAssistants[i].getSalary() + FileIO.ShopAssistants[i].getCommision();	
+		}
+		return totalRevenue() - shopAssistanSalaries;
 	}
 }
