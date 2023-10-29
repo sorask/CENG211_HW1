@@ -65,8 +65,8 @@ public class SalesManagementApp {
 				System.out.println(TransactionManagement.arrayOfTransactions[i][j].toString());
 				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].getTotalPrice();
 			}
-//			System.out.println(i + " " +tmpTotalPrice);
-			System.out.println(i + " " + SalaryManagement.calculateTotalRevenuePerShopAssistant(i));
+			System.out.println(i + " " +tmpTotalPrice);
+//			System.out.println(i + " " + SalaryManagement.calculateTotalRevenuePerShopAssistant(i));
 			tmpTotalRevenue += tmpTotalPrice;
 		}
 		System.out.println(tmpTotalRevenue);
@@ -78,5 +78,9 @@ public class SalesManagementApp {
 			FileIO.ShopAssistants[i].setCommision(SalaryManagement.calculateCommision(i));
 			System.out.println(FileIO.ShopAssistants[i].toString());
 		}
+		
+		System.out.println(Query.theHighestTotalPriceTransaction().toString());
+		System.out.println(Query.theLowestTotalPriceTransactionWithTheMostExpensiveProduct().toString());
+		System.out.println(Query.theLowestTransactionFee().toString());
 	}
 }

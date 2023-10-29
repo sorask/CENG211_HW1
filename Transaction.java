@@ -5,8 +5,8 @@ import java.util.Arrays;
 
 public class Transaction {
 	
-	final int SIZE_OF_PRODUCS_ARRAY = 3;
-	final int RANDOM_NUMBER_RANGE_OF_QUANTITY = 10;
+	public final static int SIZE_OF_PRODUCS_ARRAY = 3;
+	public final static int RANDOM_NUMBER_RANGE_OF_QUANTITY = 10;
 	
 	private int id;
 	private Product[] arrayOfProducts;
@@ -86,6 +86,11 @@ public class Transaction {
 	public double getTransactionFee()
 	{
 		return this.transactionFee;
+	}
+	
+	public Product[] getProducts()
+	{
+		return this.arrayOfProducts;
 	}
 	
     public String toString() {
