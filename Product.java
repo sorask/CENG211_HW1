@@ -1,6 +1,8 @@
 package ceng211.hw1;
 
 public class Product {
+
+	
 	final static int NUMBER_OF_PRODUCTS = 90;
 	
 	private int id;

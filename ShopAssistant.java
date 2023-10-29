@@ -31,9 +31,9 @@ public class ShopAssistant {
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
 		this.seniority = determineSeniority();
-		this.salary = .0;
 		this.sales = .0;
-		this.commision = .0;
+		this.commision = .0;		
+		this.salary = .0;
 	}
 	
 	public void setId(int id) 
@@ -81,9 +81,9 @@ public class ShopAssistant {
 		return this.seniority;
 	}
 
-	public double setSalary()
+	public void setSalary(double salary)
 	{
-		return this.salary;
+		this.salary = salary;
 	}
 	
 	public double getSalary()
@@ -91,9 +91,14 @@ public class ShopAssistant {
 		return this.salary;
 	}
 	
-	public void setSales(int id, double sales)
+	public void setSales(double sales)
 	{
-		
+		this.sales = sales;
+	}
+
+	public void setCommision(double commision)
+	{
+		this.commision = commision;
 	}
 	
 	static int determineSeniority()
@@ -103,7 +108,7 @@ public class ShopAssistant {
 	}
 	
     public String toString() {
-        return this.id + " " + this.name + " " + this.surname + " " + this.phoneNumber+ " " + this.seniority;
+        return this.id + " " + this.name + " " + this.surname + " " + this.phoneNumber+ " " + this.seniority+ " " + this.sales+ " " + this.commision+ " " + this.salary;
     }
 }
 

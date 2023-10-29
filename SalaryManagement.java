@@ -20,17 +20,17 @@ public class SalaryManagement {
 	static double calculateCommision(int ShopAssistantId)
 	{
 		double commision = 0;
-		double revenue = calculateTotalRevenuePerShopAssistan(ShopAssistantId);
+		double revenue = calculateTotalRevenuePerShopAssistant(ShopAssistantId);
 		
 		if (revenue > 7500)
-			commision *= 0.03;
+			commision = revenue * 0.03;
 		else
-			commision *= 0.01;
+			commision = revenue * 0.01;
 		
 		return commision;
 	}
 	
-	public static double calculateTotalRevenuePerShopAssistan(int ShopAssistantId)
+	static double calculateTotalRevenuePerShopAssistant(int ShopAssistantId)
 	{
 		double TotalRevenueOfShopAssistan = 0;
 		for (int j = 0; j < SalesManagementApp.TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		

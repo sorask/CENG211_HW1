@@ -7,6 +7,9 @@ public class SalesManagementApp {
 	
 	public static FileIO files;
 	
+	static Product[] Products;
+	static ShopAssistant[] ShopAssistants;
+	
 	public static TransactionManagement transactionManagement;
 	
 //    private final static String PRODUCTS_FILE = "src\\ceng211\\hw1\\files\\products.csv";
@@ -58,14 +61,22 @@ public class SalesManagementApp {
 //		System.out.println(tmpTransaction3.toString());
 //		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
 //		for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {
-		for (int i = 0; i < 2; ++i) {
-			double tmpTotalPrice = 0;
-			for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
-				System.out.println(TransactionManagement.arrayOfTransactions[i][j].toString());
-				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].totalPrice;
-			}
-			System.out.println(i + " " +tmpTotalPrice);
+//		for (int i = 0; i < 2; ++i) {
+//			double tmpTotalPrice = 0;
+//			for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
+//				System.out.println(TransactionManagement.arrayOfTransactions[i][j].toString());
+//				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].totalPrice;
+//			}
+//			System.out.println(i + " " +tmpTotalPrice);
 //			System.out.println(SalaryManagement.calculateTotalRevenuePerShopAssistan(i));
+//		}
+		
+		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
+			System.out.println(FileIO.ShopAssistants[i].toString());
+			FileIO.ShopAssistants[i].setSales(SalaryManagement.calculateTotalRevenuePerShopAssistant(i));
+			FileIO.ShopAssistants[i].setCommision(SalaryManagement.calculateCommision(i));
+			FileIO.ShopAssistants[i].setSalary(SalaryManagement.calculateSalary(i));
+			System.out.println(FileIO.ShopAssistants[i].toString());
 		}
 	}
 }
