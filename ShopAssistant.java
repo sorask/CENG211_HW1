@@ -77,5 +77,9 @@ public class ShopAssistant {
 	{
 		return this.seniority;
 	}
+
+    public String toString() {
+        return this.id + " " + this.name + " " + this.surname + " " + this.phoneNumber+ " " + this.seniority;
+    }
 }
 

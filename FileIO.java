@@ -74,7 +74,6 @@ public class FileIO {
 //				System.out.println(properties[1]);
 //				System.out.println(Double.parseDouble(properties[2].replaceAll(",",".")));	
 				
-				//int id, String name, String surname, String phoneNumber, String seniority
 				ShopAssistant tmpShopAssistant = new ShopAssistant(Integer.parseInt(properties[0]), properties[1], properties[2], properties[3], "none");
 //				System.out.println(tmpProduct.toString());
 				ShopAssistants[indexOfShopAssistantsTable] = tmpShopAssistant;
@@ -86,7 +85,7 @@ public class FileIO {
 			}
 			
 		  fileReader.close();
-//		  System.out.println(indexOfProductsTable);
+//		  System.out.println(indexOfShopAssistantsTable);
 		}
         catch (FileNotFoundException ex){
             System.out.println(ex);

@@ -16,9 +16,13 @@ public class SalesManagementApp {
 	
 		files = new FileIO();
 		
-//		for (int i = 0;i < NUMBER_OF_PRODUCTS; i++) {
-//			System.out.println(Products[i].toString());
+//		for (int i = 0;i < Product.NUMBER_OF_PRODUCTS; i++) {
+//			System.out.println(FileIO.Products[i].toString());
 //		}
+		
+//		for (int i = 0;i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; i++) {
+//			System.out.println(FileIO.ShopAssistants[i].toString());
+//		}		
 		
 //		Transaction tmpTransaction = new Transaction(0);
 //		System.out.println(tmpTransaction.getId());
