@@ -7,8 +7,8 @@ import java.io.IOException;
 
 public class FileIO {
 	
-	final static String PRODUCTS_FILE = "src\\ceng211\\hw1\\files\\products.csv";
-	final static String SHOP_ASSISTANTS_FILE = "src\\ceng211\\hw1\\files\\shopAssistants.csv";
+	public final static String PRODUCTS_FILE = "src\\ceng211\\hw1\\files\\products.csv";
+	public final static String SHOP_ASSISTANTS_FILE = "src\\ceng211\\hw1\\files\\shopAssistants.csv";
 	
 	public static Product[] Products;
 	public static ShopAssistant[] ShopAssistants;

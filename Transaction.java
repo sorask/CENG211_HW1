@@ -9,11 +9,10 @@ public class Transaction {
 	final int RANDOM_NUMBER_RANGE_OF_QUANTITY = 10;
 	
 	private int id;
-//gizlecek uyeler
-	public Product[] arrayOfProducts;
-	public int[] arrayOfQuantities;
-	public double totalPrice;
-	public double transactionFee;
+	private Product[] arrayOfProducts;
+	private int[] arrayOfQuantities;
+	private double totalPrice;
+	private double transactionFee;
 	
 	public  Transaction()
 	{		
@@ -77,6 +76,16 @@ public class Transaction {
 	public int getId() 
 	{
 		return this.id;
+	}
+	
+	public double getTotalPrice()
+	{
+		return this.totalPrice;
+	}
+	
+	public double getTransactionFee()
+	{
+		return this.transactionFee;
 	}
 	
     public String toString() {

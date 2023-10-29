@@ -2,20 +2,15 @@ package ceng211.hw1;
 
 public class SalesManagementApp {
 	
-	final static int NUMBER_OF_TRANSACTIONS = 1500;
-	final static int TRANSACTION_PER_SHOP_ASSISTANTS = 15;
+	public final static int NUMBER_OF_TRANSACTIONS = 1500;
+	public final static int TRANSACTION_PER_SHOP_ASSISTANTS = 15;
 	
 	public static FileIO files;
 	
-	static Product[] Products;
-	static ShopAssistant[] ShopAssistants;
+	public static Product[] Products;
+	public static ShopAssistant[] ShopAssistants;
 	
 	public static TransactionManagement transactionManagement;
-	
-//    private final static String PRODUCTS_FILE = "src\\ceng211\\hw1\\files\\products.csv";
-//    private final static String SHOP_ASSISTANTS_FILE = "src\\ceng211\\hw1\\files\\shopAssistants.csv";
-    
-//    public static Product[] Products = new Product[NUMBER_OF_PRODUCTS];
 	
 	public static void main(String[] args) {
 	
@@ -67,7 +62,7 @@ public class SalesManagementApp {
 			double tmpTotalPrice = 0;
 			for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
 				System.out.println(TransactionManagement.arrayOfTransactions[i][j].toString());
-				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].totalPrice;
+				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].getTotalPrice();
 			}
 //			System.out.println(i + " " +tmpTotalPrice);
 			System.out.println(i + " " + SalaryManagement.calculateTotalRevenuePerShopAssistant(i));

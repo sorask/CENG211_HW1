@@ -4,7 +4,7 @@ import java.util.Random;
 
 public class ShopAssistant {
 	
-	final static int NUMBER_OF_SHOP_ASSISTANS = 100;
+	public final static int NUMBER_OF_SHOP_ASSISTANS = 100;
 	
 	private int id;
 	private String name;
@@ -101,7 +101,7 @@ public class ShopAssistant {
 		this.commision = commision;
 	}
 	
-	static int determineSeniority()
+	public static int determineSeniority()
 	{	
 		Random random = new Random();
 		return random.nextInt(6) + 1;			
