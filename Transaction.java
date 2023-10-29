@@ -55,13 +55,24 @@ public class Transaction {
 			arrayOfQuantities[i] = randomQuantityValue;
 			totalPrice += randomQuantityValue * FileIO.Products[randomProductId].getPrice();
 		}
-		transactionFee = totalPrice * 0.01;
+		transactionFee = calculateTransactionFee();
 	}
+	
+	private double calculateTransactionFee()
+	{
+		double tmpTransactionFee = 0;
+		
+		if (totalPrice >= 1000 )
+			tmpTransactionFee = totalPrice * 0.09;
+		else if (totalPrice >= 800)
+			tmpTransactionFee = totalPrice * 0.05;
+		else if (totalPrice >= 500)
+			tmpTransactionFee = totalPrice * 0.03;
+		else
+			tmpTransactionFee = totalPrice * 0.01;		
 
-//	public void setId(int id) 
-//	{
-//		this.id = id;
-//	}
+		return tmpTransactionFee;
+	}
 	
 	public int getId() 
 	{

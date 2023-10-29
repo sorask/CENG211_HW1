@@ -1,5 +1,7 @@
 package ceng211.hw1;
 
+import java.util.Random;
+
 public class ShopAssistant {
 	
 	final static int NUMBER_OF_SHOP_ASSISTANS = 100;
@@ -8,7 +10,10 @@ public class ShopAssistant {
 	private String name;
 	private String surname;
 	private String phoneNumber;
-	private String seniority;
+	private int seniority;
+	private double salary;
+	private double sales;
+	private double commision;
 	
 	public ShopAssistant ()
 	{
@@ -16,16 +21,19 @@ public class ShopAssistant {
 		name = "noname";
 		surname = "noname";
 		phoneNumber = "999-9999";
-		seniority = "none";
+		seniority = 0;
 	}
 
-	public ShopAssistant (int id, String name, String surname, String phoneNumber, String seniority)
+	public ShopAssistant (int id, String name, String surname, String phoneNumber)
 	{
 		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
-		this.seniority = seniority;
+		this.seniority = determineSeniority();
+		this.salary = .0;
+		this.sales = .0;
+		this.commision = .0;
 	}
 	
 	public void setId(int id) 
@@ -68,16 +76,32 @@ public class ShopAssistant {
 		return this.phoneNumber;
 	}
 	
-	public void setSeniority(String seniority)
-	{
-		this.name = phoneNumber;
-	}
-	
-	public String getSeniority()
+	public int getSeniority()
 	{
 		return this.seniority;
 	}
 
+	public double setSalary()
+	{
+		return this.salary;
+	}
+	
+	public double getSalary()
+	{
+		return this.salary;
+	}
+	
+	public void setSales(int id, double sales)
+	{
+		
+	}
+	
+	static int determineSeniority()
+	{	
+		Random random = new Random();
+		return random.nextInt(6) + 1;			
+	}
+	
     public String toString() {
         return this.id + " " + this.name + " " + this.surname + " " + this.phoneNumber+ " " + this.seniority;
     }

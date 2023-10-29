@@ -7,6 +7,8 @@ public class SalesManagementApp {
 	
 	public static FileIO files;
 	
+	public static TransactionManagement transactionManagement;
+	
 //    private final static String PRODUCTS_FILE = "src\\ceng211\\hw1\\files\\products.csv";
 //    private final static String SHOP_ASSISTANTS_FILE = "src\\ceng211\\hw1\\files\\shopAssistants.csv";
     
@@ -38,9 +40,11 @@ public class SalesManagementApp {
 		
 //		int i = 0;
 //		int j = 0;
-		TransactionManagement tmpTransactionManagement = new TransactionManagement();
-//		Transaction tmpTransaction2 = tmpTransactionManagement.arrayOfTransactions[0][0];
-//		Transaction tmpTransaction3 = tmpTransactionManagement.arrayOfTransactions[1][0];
+		
+		transactionManagement = new TransactionManagement();
+		
+//		Transaction tmpTransaction2 = transactionManagement.arrayOfTransactions[0][0];
+//		Transaction tmpTransaction3 = transactionManagement.arrayOfTransactions[1][0];
 //		System.out.println(tmpTransaction.getId());
 //		System.out.println(tmpTransaction.arrayOfProducts[0].getName() + " " + tmpTransaction.arrayOfProducts[0].getId());
 //		System.out.println(tmpTransaction.arrayOfQuantities[0]);
@@ -52,12 +56,16 @@ public class SalesManagementApp {
 //		System.out.println(tmpTransaction.transactionFee);
 //		System.out.println(tmpTransaction2.toString());
 //		System.out.println(tmpTransaction3.toString());
-//		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; i++) {
-//			for (int j = 0; j < SalesManagementApp.TRANSACTION_PER_SHOP_ASSISTANTS; j++) {
-		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
+//		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
+//		for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {
+		for (int i = 0; i < 2; ++i) {
+			double tmpTotalPrice = 0;
 			for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
-				System.out.println(tmpTransactionManagement.arrayOfTransactions[i][j].toString());
+				System.out.println(TransactionManagement.arrayOfTransactions[i][j].toString());
+				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].totalPrice;
 			}
-		}		
+			System.out.println(i + " " +tmpTotalPrice);
+//			System.out.println(SalaryManagement.calculateTotalRevenuePerShopAssistan(i));
+		}
 	}
 }

@@ -1,7 +1,8 @@
 package ceng211.hw1;
 
 public class TransactionManagement {
-	public Transaction[][] arrayOfTransactions;
+	
+	public static Transaction[][] arrayOfTransactions;
 	
 	public TransactionManagement() {
 		arrayOfTransactions = new Transaction[ShopAssistant.NUMBER_OF_SHOP_ASSISTANS][SalesManagementApp.TRANSACTION_PER_SHOP_ASSISTANTS];
