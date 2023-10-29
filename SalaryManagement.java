@@ -6,15 +6,15 @@ public class SalaryManagement {
 	{	
 		double salary = .0;
 		if (seniority >= 5)
-			salary = 3000;
+			salary = 3000.;
 		else if (seniority >= 3)
-			salary = 2500;
+			salary = 2500.;
 		else if (seniority >= 1)
-			salary = 2000;
+			salary = 2000.;
 		else
-			salary = 1500;
+			salary = 1500.;
 		
-		return salary;
+		return salary * 4;
 	}
 	
 	static double calculateCommision(int ShopAssistantId)

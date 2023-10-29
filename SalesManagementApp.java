@@ -55,12 +55,13 @@ public class SalesManagementApp {
 //		System.out.println(tmpTransaction2.toString());
 //		System.out.println(tmpTransaction3.toString());
 		
-//		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
-//		for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {
-		double tmpTotalRevenue = 0;		
-		for (int i = 0; i < 2; ++i) {
+		double tmpTotalRevenue = 0;
+		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
 			double tmpTotalPrice = 0;
 			for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
+//		for (int i = 0; i < 2; ++i) {
+//			double tmpTotalPrice = 0;
+//			for (int j = 0; j < TRANSACTION_PER_SHOP_ASSISTANTS; ++j) {		
 				System.out.println(TransactionManagement.arrayOfTransactions[i][j].toString());
 				tmpTotalPrice += TransactionManagement.arrayOfTransactions[i][j].getTotalPrice();
 			}
@@ -71,10 +72,10 @@ public class SalesManagementApp {
 		System.out.println(tmpTotalRevenue);
 		
 		for (int i = 0; i < ShopAssistant.NUMBER_OF_SHOP_ASSISTANS; ++i) {
-			System.out.println(FileIO.ShopAssistants[i].toString());
+//			System.out.println(FileIO.ShopAssistants[i].toString());
+			FileIO.ShopAssistants[i].setSalary(SalaryManagement.calculateSalary(FileIO.ShopAssistants[i].getSeniority()));
 			FileIO.ShopAssistants[i].setSales(SalaryManagement.calculateTotalRevenuePerShopAssistant(i));
 			FileIO.ShopAssistants[i].setCommision(SalaryManagement.calculateCommision(i));
-			FileIO.ShopAssistants[i].setSalary(SalaryManagement.calculateSalary(i));
 			System.out.println(FileIO.ShopAssistants[i].toString());
 		}
 	}

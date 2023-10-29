@@ -3,6 +3,7 @@ package ceng211.hw1;
 import java.util.Random;
 
 public class ShopAssistant {
+	private static Random random = new Random();
 	
 	public final static int NUMBER_OF_SHOP_ASSISTANS = 100;
 	
@@ -22,6 +23,9 @@ public class ShopAssistant {
 		surname = "noname";
 		phoneNumber = "999-9999";
 		seniority = 0;
+		salary = .0;
+		sales = .0;
+		commision = .0;
 	}
 
 	public ShopAssistant (int id, String name, String surname, String phoneNumber)
@@ -31,9 +35,9 @@ public class ShopAssistant {
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
 		this.seniority = determineSeniority();
+		this.salary = .0;
 		this.sales = .0;
 		this.commision = .0;		
-		this.salary = .0;
 	}
 	
 	public void setId(int id) 
@@ -103,12 +107,11 @@ public class ShopAssistant {
 	
 	public static int determineSeniority()
 	{	
-		Random random = new Random();
 		return random.nextInt(6) + 1;			
 	}
 	
     public String toString() {
-        return this.id + " " + this.name + " " + this.surname + " " + this.phoneNumber+ " " + this.seniority+ " " + this.sales+ " " + this.commision+ " " + this.salary;
+        return this.id + " " + this.name + " " + this.surname + " " + this.phoneNumber+ " " + this.seniority+ " " + this.salary+ " " + this.sales+ " " + this.commision;
     }
 }
 
