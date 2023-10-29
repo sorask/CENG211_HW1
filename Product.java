@@ -1,9 +1,6 @@
 package ceng211.hw1;
 
 public class Product {
-	public final static int NUMBER_OF_PRODUCTS = 90;
-	
-	public static Product[] Products = new Product[Product.NUMBER_OF_PRODUCTS];
 	
 	private int id;
 	private String name;
