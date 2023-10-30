@@ -2,7 +2,7 @@ package ceng211.hw1;
 
 public class SalaryManagement {
 
-	static double calculateSalary(int seniority)
+	static double calculateWeeklyBasedSalary(int seniority)
 	{	
 		double salary = .0;
 		if (seniority >= 5)

@@ -37,7 +37,7 @@ public class ShopAssistant {
 		this.name = name;
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
-		this.seniority = random.nextInt(6) + 1;
+		this.seniority = random.nextInt(26);
 		this.weeklyBasedSalary = .0;;
 		this.salary = .0;
 		this.sales = .0;
